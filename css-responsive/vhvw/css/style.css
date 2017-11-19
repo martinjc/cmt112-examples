@@ -1,0 +1,21 @@
+body, html, * {
+    margin: 0;
+    padding: 0;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.halfwidth {
+    width: 50vw;
+    margin: auto;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
