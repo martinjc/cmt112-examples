@@ -1,0 +1,27 @@
+body {
+    background-color: #ddd;
+}
+
+header {
+    background-color: #aaa;
+}
+
+footer {
+    background-color: #aaa;
+}
+
+.content {
+    display: flex;
+}
+
+section {
+    width: 66%;
+    flex-grow: 2;
+    background-color: #ccc;
+}
+
+aside {
+    width: 33%;
+    flex-grow: 1;
+    background-color: #888;
+}
