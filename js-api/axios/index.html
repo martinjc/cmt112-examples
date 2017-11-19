@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunrise &amp; Sunset</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <script>
+
+        var lat = 51.4816;
+        var lng = 3.1791;
+
+        axios.get('http://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng)
+        .then(function(response){
+            console.log(response.data);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunrise &amp; Sunset</title>
+</head>
+<body>
+
+    <script>
+
+        var lat = 51.4816;
+        var lng = 3.1791;
+
+        fetch('http://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+        });
+
+    </script>
+</body>
+</html>

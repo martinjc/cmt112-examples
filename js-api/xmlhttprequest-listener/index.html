@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunrise &amp; Sunset</title>
+</head>
+<body>
+
+    <script>
+        // Function that will process the response from the API
+        var processResponse = function() {
+            var data = JSON.parse(this.response);
+            // Replace this code with code that
+            // does something with the response
+            console.log(data);
+        }
+
+        // Function to ensure parameters used in request are encoded correctly
+        var encodeParameters = function(params) {
+            // join all key value pairs and store in an array
+            var strArray = [];
+            for(var key in params) {
+                if(params.hasOwnProperty(key)) {
+                    var paramString = encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+                    strArray.push(paramString);
+                }
+            }
+            // join everything in the array together
+            return strArray.join("&");
+        }
+
+        // the parameters for the API request
+        var parameters = {
+            lat: 51.4816,
+            lng: 3.1791,
+        }
+
+        // construct the URL to call
+        var base_url = 'http://api.sunrise-sunset.org/json';
+        var query_url = base_url + '?' + encodeParameters(parameters);
+        console.log(query_url);
+
+        // create an XMLHttpRequest object, add a listener to
+        // tell it what to do if successful, tell it which URL
+        // to GET, and then make ('send') the call
+        var xhttp = new XMLHttpRequest();
+        xhttp.addEventListener('load', processResponse);
+        xhttp.open('GET', query_url);
+        xhttp.send();
+
+    </script>
+</body>
+</html>
