@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Hoisting</title>
+</head>
+<body>
+    <script>
+        function makePrintNumberFunction(n){
+            var number = n;
+            var printNumber = function(){
+                console.log(number);
+            }
+            return printNumber;
+        }
+
+        var print2 = makePrintNumberFunction(2);
+        print2();
+        var print3 = makePrintNumberFunction(3);
+        print3();
+    </script>
+
+</body>
+</html>

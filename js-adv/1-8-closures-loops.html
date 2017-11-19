@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Hoisting</title>
+</head>
+<body>
+    <div id="output">
+
+    </div>
+    <script>
+
+        var students = ["Martin", "Lisa", "Arthur", "Evelyn"];
+
+        var output_div = document.querySelector('#output');
+
+        for(var i = 0; i < students.length; i++) {
+            var student = students[i];
+            var paragraph = document.createElement('p');
+            paragraph.appendChild(document.createTextNode(students[i]));
+            paragraph.id = student
+            paragraph.addEventListener('click', function(){
+                console.log('student ' + student + ' clicked');
+                var clicked_paragraph = document.querySelector('#' + student);
+                console.log(clicked_paragraph);
+            });
+            output_div.appendChild(paragraph);
+        }
+    </script>
+
+</body>
+</html>

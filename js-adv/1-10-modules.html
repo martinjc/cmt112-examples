@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Hoisting</title>
+</head>
+<body>
+    <div id="output">
+
+    </div>
+    <script>
+
+        var myModule = (function(){
+
+            var counter = 0;
+
+            function changeValue(value) {
+                counter += value;
+            }
+
+            function addOne() {
+                changeValue(+1);
+            }
+
+            function subOne() {
+                changeValue(-1);
+            }
+
+            function value() {
+                return counter;
+            }
+
+            return {
+                addOne: addOne,
+                subOne: subOne,
+                value: value
+            }
+
+        }());
+
+        console.log(myModule.value());
+        myModule.addOne();
+        myModule.addOne();
+        console.log(myModule.value());
+        myModule.subOne();
+        console.log(myModule.value());
+        myModule.changeValue(3);
+        console.log(myModule.value());
+
+    </script>
+
+</body>
+</html>

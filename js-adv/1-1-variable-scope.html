@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <script>
+        var myName = function(firstName, lastName) {
+            var temporaryName = firstName + " " + lastName;
+            return temporaryName;
+        }
+
+        console.log(myName("Martin", "Chorley"));
+        console.log(temporaryName);
+    </script>
+
+</body>
+</html>

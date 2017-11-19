@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Hoisting</title>
+</head>
+<body>
+    <div id="output">
+
+    </div>
+    <script>
+
+        (function(){
+            console.log('this function is run immediately');
+            var privateVariable = 'can this be accessed?';
+        }());
+
+        console.log(privateVariable);
+    </script>
+
+</body>
+</html>
